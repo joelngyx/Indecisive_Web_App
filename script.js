@@ -1,4 +1,6 @@
 let activities = new Array(); // creates a dynamic array
+const cat_photos = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
+                    "assets/pic5.jpg", "assets/pic6.jpg", "assets/pic7.jpg"];
 
 function addActivity1() {
     var buttonState1 = document.getElementById("buttonAdd1");
@@ -71,14 +73,15 @@ function isInputValid(input) {
     // checks for duplicate values
     for(var i = 0; i < activities.length; i ++) {
         if(input == activities[i]) {
-            alert("Duplicate activities not allowed!");
+            changeCardText("Duplicate decisions are not allowed!");
+            setCatPhoto("assets/error_general.jpg");
             return false;
         }
     } 
-
     // checks for empty inputs
     if(input == "") {
-        alert("Activity cannot be empty!");
+        changeCardText("Just as my food bowl cannot be empty, neither can your input!");
+        setCatPhoto("assets/error_empty.jpg");
         return false;
     }
 
@@ -100,10 +103,12 @@ function chooseActivity() {
         if(length == 0) {
             // activities array is empty
             changeCardText("There are no decisions to make!");
+            setCatPhoto("assets/error_no_decisions.jpg");
             return;
         } else {
             // gets a random number from 0 to activities.length
             var randomNum = Math.floor(Math.random() * length);
+            getRandomCatPhoto();
             changeCardText("You should " + activities[randomNum]);
         }
     } catch(e){
@@ -112,10 +117,21 @@ function chooseActivity() {
 }
 
 function changeCardText(cardText) {
-    const chosenActivity = document.getElementById("cardText");
+    const chosenActivity = document.getElementById("resultCardText");
     chosenActivity.textContent = cardText;
 }
 
 function generateID(inputText, identifierText) {
     return(inputText.replace(" ", "") + identifierText);
+}
+
+function getRandomCatPhoto() {
+    var randomNum = Math.floor(Math.random() * cat_photos.length);
+    var catImage = document.getElementById("catSrc");
+    catImage.src = cat_photos[randomNum];
+}
+
+function setCatPhoto(inputText) {
+    var catImage = document.getElementById("catSrc");
+    catImage.src = inputText;
 }
