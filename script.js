@@ -102,7 +102,7 @@ function chooseActivity() {
         var length = activities.length;
         if(length == 0) {
             // activities array is empty
-            changeCardText("There are no decisions to make!");
+            changeCardText("How can I choose if there are no decisions to choose from?");
             setCatPhoto("assets/error_no_decisions.jpg");
             return;
         } else {

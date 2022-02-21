@@ -12,16 +12,21 @@
                 <div>
                     <h1>A super random decision maker</h1>
                     <p>
-                        You're indecisive and fickle; utterly incapable of 
+                        You're indecisive, fickle and utterly incapable of 
                         running your own life.  
                         Let this website make your decisions instead!
+                        <br>
+                        <br>
+                        Add decisions with the "Add a decision" button. 
+                        Make a random choice from the added decisions with 
+                        the "Roll for a choice" button.
                     </p>
                     <div id="buttonAddDiv" class="buttonDiv">
-                        <button id="buttonAdd1" class ="buttonAdd1" type="button" onclick="addActivity1()">Add an activity</button>
+                        <button id="buttonAdd1" class ="buttonAdd1" type="button" onclick="addActivity1()">Add a decision</button>
                         <script src="script.js"></script>
                     </div>
                     <div class="buttonDiv">
-                        <button class="buttonChoose" type="button" onclick="chooseActivity()">Choose an activity</button>
+                        <button class="buttonChoose" type="button" onclick="chooseActivity()">Roll for a choice</button>
                         <script src="script.js"></script>
                     </div>
                 </div>
@@ -30,8 +35,10 @@
             <div class="flex-child">
                 <div class="resultCard">
                     <img src="assets/default_img.jpg" id="catSrc">
-                    <div>
-                        <p class="resultCardText" id="resultCardText">Get started! Add some decisions and leave it up to randomness</p>
+                    <div class="resultCardTextContainer">
+                        <p class="resultCardText" id="resultCardText">
+                            Let's get started!
+                        </p>
                     </div>
                 </div>
             </div>
