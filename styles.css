@@ -1,15 +1,133 @@
-h1{
-    color: orange;
-    background-color: slategray;
-    font-size: 30px;
-    text-decoration: solid;
-    font-family: 'Franklin Gothic Medium';
+/****** Text ******/
+h1 {
+    color: black;
+    font-size: 55px;
+    font-weight: 900;
+    font-family: 'Arial Narrow Bold';
     text-align: center;
-    border-style: dotted ;
-    /*# to access hex codes
-    classes e.g. h1 class=...
-    <attribute>.<class>
-    meta tag  
-    mediaquery @media screen and () 
-    */
+    padding: 20px 20px 5px;
 }
+
+h2 {
+    margin-top: 70px;
+    font-size: 20px;
+    border-style: dashed;
+    font-weight: 900;
+    font-family: 'Arial Narrow Bold';
+    text-align: center;
+    padding: 20px 20px 20px;
+}
+
+p {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Arial";
+    text-overflow: ellipsis;
+}
+
+.activityCardText {
+    padding-left: 10px;
+    font-size: 15px;
+    text-align: left;
+    overflow: inherit;
+}
+
+/****** Containers ******/
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    padding: 30px 30px 0px;
+    max-height: 1000px;
+}
+
+/****** Buttons ******/
+button {
+    background-color: #B36956;
+    border: none;
+    color: white;
+    text-align: center;
+    font-family: 'Arial';
+}
+
+button:hover {
+    background-color: #542F26;
+}
+
+.buttonAdd1 {
+    height: 50px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+.buttonAdd2 {
+    height: 50px;
+    width: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.buttonChoose {
+    height: 50px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 6px;
+    align-self: flex-end;
+}
+
+.buttonChoose:hover {
+    background-color: #542F26;
+}
+
+.buttonRemove {
+    height: 30px;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/****** Other Elements ******/
+input {
+    height: 50px;
+    width: 160px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.resultCard {
+    margin-top: 80px;
+    padding: 20px 20px 20px;
+    border-style: solid;
+    width: 450px;
+    border-radius: 10px;
+    overflow:inherit;
+}
+
+.activityCard {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 300px;
+    border-style: dotted;
+    overflow: hidden;
+} 

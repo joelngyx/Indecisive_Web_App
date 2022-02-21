@@ -6,27 +6,41 @@
     </head>
 
     <body>
-        <var>logo image</var>
-        <br>
-        <var>decision text</var>
-        <div>
-            <h1>Janus</h1>
-            <h3>a decision-making web application</h3>
+        <div class="flex-container">
+            <!-- LEFT COLUMN -->
+            <div class="flex-child">
+                <div>
+                    <h1>A super random decision maker</h1>
+                    <p>
+                        You're indecisive and fickle; utterly incapable of 
+                        running your own life.  
+                        Let this website make your decisions instead!
+                    </p>
+                    <div id="buttonAddDiv" class="buttonDiv">
+                        <button id="buttonAdd1" class ="buttonAdd1" type="button" onclick="addActivity1()">Add an activity</button>
+                        <script src="script.js"></script>
+                    </div>
+                    <div class="buttonDiv">
+                        <button class="buttonChoose" type="button" onclick="chooseActivity()">Choose an activity</button>
+                        <script src="script.js"></script>
+                    </div>
+                </div>
+            </div>
+            <!-- MIDDLE COLUMN -->
+            <div class="flex-child">
+                <div class="resultCard">
+                    <img src="assets/default_img.jpg" style="height: 100%; width: 100%; object-fit: contain;">
+                    <div>
+                        <p id="cardText">Get started! Add some decisions and leave it up to randomness</p>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT COLUMN -->
+            <div class="flex-child">
+                <div class="activitiyListCard" id="activitiyListCard">
+                    <h2>A list of your decisions</h2>
+                </div>
+            </div>
         </div>
-        <div>
-            <form>
-            <label for="activityName">Enter an activity</label><br>
-            <input type="text" id="activityName" name="activityName"><br>
-            <button type="button" onclick="addActivity()">Add activity</button>
-            <script src="script.js"></script>
-            </form>
-        </div>
-        <div>
-            <button type="button" onclick="chooseActivity()">Choose an activity</button>
-            <script src="script.js"></script>
-        </div>
-
     </body>
-
-
 </html>
