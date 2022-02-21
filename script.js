@@ -55,12 +55,12 @@ function addActivity2() {
         addedDeleteButton.innerHTML = "remove";
         addedDeleteButton.onclick = function() {
             removeActivity(input);
-            var activityCardElementToDelete = document.getElementById(generateID(input, "_card"));
-            activityCardElementToDelete.parentNode.removeChild(activityCardElementToDelete)
             var textElementToDelete = document.getElementById(generateID(input, "_id"));
             textElementToDelete.parentNode.removeChild(textElementToDelete);
             var buttonElementToDelete = document.getElementById(generateID(input, "_button"));
             buttonElementToDelete.parentNode.removeChild(buttonElementToDelete);
+            var activityCardElementToDelete = document.getElementById(generateID(input, "_card"));
+            activityCardElementToDelete.parentNode.removeChild(activityCardElementToDelete)
         }
         addedActivityCard.appendChild(addedDeleteButton);
         
@@ -72,7 +72,7 @@ function addActivity2() {
 function isInputValid(input) {
     // checks for duplicate values
     for(var i = 0; i < activities.length; i ++) {
-        if(input == activities[i]) {
+        if(generateID(input, "") == generateID(activities[i], "")) {
             changeCardText("Duplicate decisions are not allowed!");
             setCatPhoto("assets/error_general.jpg");
             return false;
