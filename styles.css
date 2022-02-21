@@ -1,0 +1,15 @@
+h1{
+    color: orange;
+    background-color: slategray;
+    font-size: 30px;
+    text-decoration: solid;
+    font-family: 'Franklin Gothic Medium';
+    text-align: center;
+    border-style: dotted ;
+    /*# to access hex codes
+    classes e.g. h1 class=...
+    <attribute>.<class>
+    meta tag  
+    mediaquery @media screen and () 
+    */
+}
