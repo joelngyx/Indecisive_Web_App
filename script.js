@@ -1,13 +1,23 @@
 let activities = new Array(); // creates a dynamic array
 const cat_photos = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
                     "assets/pic5.jpg", "assets/pic6.jpg", "assets/pic7.jpg"];
+const loading_images = ["assets/loading1.jpg", "assets/loading2.jpg", "assets/loading3.jpg",
+                        "assets/loading4.jpg", "assets/loading5.jpg", "assets/loading6.jpg"]
 
+/** 
+ * the function for add button's original state;
+ * onclick, it replaces the original add button with
+ * an input element and a button element
+ */ 
 function addActivity1() {
+    // identifies the add button in the document
     var buttonState1 = document.getElementById("buttonAdd1");
     buttonState1.parentNode.removeChild(buttonState1);
 
+    // identifies the div block in which the add button used to be in
     var buttonDiv = document.getElementById("buttonAddDiv");
 
+    // adds a input and a button element
     var activityInput = document.createElement("input");
     activityInput.id = "activityName";
     buttonDiv.appendChild(activityInput);
@@ -22,6 +32,9 @@ function addActivity1() {
 
 }
 
+/**
+ * adds input provided by the user into the activities
+ */
 function addActivity2() {
     // retrieves input from activityName input element (as per main.html)
     var input = document.getElementById("activityName").value;
@@ -69,9 +82,13 @@ function addActivity2() {
     }
 }
 
+/**
+ *  checks if the input provided by the user for adding a decision is valid
+ */ 
 function isInputValid(input) {
     // checks for duplicate values
     for(var i = 0; i < activities.length; i ++) {
+        // eliminate whitespaces in the input to ensure that there are no duplicates
         if(generateID(input, "") == generateID(activities[i], "")) {
             changeCardText("Duplicate decisions are not allowed!");
             setCatPhoto("assets/error_general.jpg");
@@ -88,6 +105,9 @@ function isInputValid(input) {
     return true;
 }
 
+/**
+ * removes the selected activity item in the activity list
+ */
 function removeActivity(input) {
     for(var i = 0; i < activities.length; i++) {
         if(input == activities[i]) {
@@ -97,7 +117,10 @@ function removeActivity(input) {
     }
 }
 
-function chooseActivity() {
+/**
+ *  randomly chooses an item from the array activities
+ */ 
+async function chooseActivity() {
     try{
         var length = activities.length;
         if(length == 0) {
@@ -106,6 +129,8 @@ function chooseActivity() {
             setCatPhoto("assets/error_no_decisions.jpg");
             return;
         } else {
+            resultCardLoading();
+            await new Promise(r=> setTimeout(r, 1800));
             // gets a random number from 0 to activities.length
             var randomNum = Math.floor(Math.random() * length);
             getRandomCatPhoto();
@@ -116,22 +141,52 @@ function chooseActivity() {
     }
 }
 
+/**
+ * changes the value of the text in the result card to the
+ * provided cardText
+*/
 function changeCardText(cardText) {
     const chosenActivity = document.getElementById("resultCardText");
     chosenActivity.textContent = cardText;
 }
 
+
+/**
+ * removes whitespace and appends a given string to create 
+ * a unique id
+*/
 function generateID(inputText, identifierText) {
     return(inputText.replace(" ", "") + identifierText);
 }
 
+/**
+ * randomly picks an item from the const array cat_photos
+ * and sets it to the src field of the image element in 
+ * the result card
+*/
 function getRandomCatPhoto() {
     var randomNum = Math.floor(Math.random() * cat_photos.length);
     var catImage = document.getElementById("catSrc");
     catImage.src = cat_photos[randomNum];
 }
 
+/**
+ * replaces the src field of the image element in the
+ * result card with the provided inputText 
+ */
 function setCatPhoto(inputText) {
     var catImage = document.getElementById("catSrc");
     catImage.src = inputText;
+}
+
+/**
+ * shows a short loading image and text in the
+ * result card
+ */
+async function resultCardLoading() {
+    changeCardText("Making a decision...");
+    for(var i=0; i < loading_images.length; i++) {
+        setCatPhoto(loading_images[i]);
+        await new Promise(r=> setTimeout(r, 300));
+    }
 }
