@@ -1,5 +1,6 @@
 # indecisive_web_app
 a simple, randomized decision-making web app
+best viewed on a desktop browser as responsive UI has yet to be implemented
 
 To test:
 - Download the code in a .zip folder
