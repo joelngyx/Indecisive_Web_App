@@ -1,6 +1,6 @@
 let activities = new Array(); // creates a dynamic array
 const cat_photos = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
-                    "assets/pic5.jpg", "assets/pic6.jpg", "assets/pic7.jpg"];
+                    "assets/pic5.jpg", "assets/pic6.jpg"];
 const loading_images = ["assets/loading1.jpg", "assets/loading2.jpg", "assets/loading3.jpg",
                         "assets/loading4.jpg", "assets/loading5.jpg", "assets/loading6.jpg"]
 
@@ -92,6 +92,8 @@ function isInputValid(input) {
         if(generateID(input, "") == generateID(activities[i], "")) {
             changeCardText("Duplicate decisions are not allowed!");
             setCatPhoto("assets/error_general.jpg");
+            // clears the activityName input element
+            document.getElementById("activityName").value = ""; 
             return false;
         }
     } 
@@ -129,8 +131,7 @@ async function chooseActivity() {
             setCatPhoto("assets/error_no_decisions.jpg");
             return;
         } else {
-            resultCardLoading();
-            await new Promise(r=> setTimeout(r, 1800));
+            await resultCardLoading();
             // gets a random number from 0 to activities.length
             var randomNum = Math.floor(Math.random() * length);
             getRandomCatPhoto();
