@@ -1,7 +1,9 @@
 let activities = new Array(); // creates a dynamic array
 const cat_images = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
                     "assets/pic5.jpg", "assets/pic6.jpg", "assets/loading.gif", 
-                    "assets/loading11.jpg"];
+                    "assets/loading11.jpg", "assets/default_img.jpg", "assets/error_empty.jpg",
+                    "assets/error_general.jpg", "assets/error_no_decisions.jpg"];
+
 
 function preloadImage() {
     for (let i = 0; i < cat_images.length; i++) {
