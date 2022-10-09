@@ -3,18 +3,24 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <title>DecisionMaker</title>
+
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"/>
     </head>
 
     <body>
-        <div class="flex-container">
+        <div class="row d-flex justify-content-center mt-2 px-2">
             <!-- LEFT COLUMN -->
-            <div class="flex-child">
-                <div>
+            <div class="col-12 col-xl-4">
+                <div class="p-5">
                     <h1>A super random decision maker</h1>
                     <p>
                         You're indecisive, fickle and utterly incapable of 
-                        running your own life.  
-                        Let this website make your decisions instead!
+                        running your own life. A disgrace to your mother, and
+                        a stain on your family name.
+                        Let this website make decisions for you instead!
                         <br>
                         <br>
                         Add decisions with the "Add a decision" button. 
@@ -32,10 +38,10 @@
                 </div>
             </div>
             <!-- MIDDLE COLUMN -->
-            <div class="flex-child">
+            <div class="col-5 col-xl-4 d-flex justify-content-center">
                 <div class="resultCard">
                     <img src="assets/default_img.jpg" id="catSrc">
-                    <div class="resultCardTextContainer">
+                    <div class="resultCardTextContainer mt-1 row d-flex justify-content-center">
                         <p class="resultCardText" id="resultCardText">
                             Let's get started!
                         </p>
@@ -43,9 +49,11 @@
                 </div>
             </div>
             <!-- RIGHT COLUMN -->
-            <div class="flex-child">
-                <div class="activitiyListCard" id="activitiyListCard">
-                    <h2>A list of your decisions</h2>
+            <div class="col-5 col-xl-4 mt-5">
+                <div class="d-flex justify-content-center mt-4 pt-2">
+                    <div class="activitiyListCard" id="activitiyListCard">
+                        <h2>A list of your decisions</h2>
+                    </div>
                 </div>
             </div>
         </div>

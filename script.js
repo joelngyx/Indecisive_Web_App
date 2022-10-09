@@ -1,8 +1,16 @@
 let activities = new Array(); // creates a dynamic array
-const cat_photos = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
-                    "assets/pic5.jpg", "assets/pic6.jpg"];
-const loading_images = ["assets/loading1.jpg", "assets/loading2.jpg", "assets/loading3.jpg",
-                        "assets/loading4.jpg", "assets/loading5.jpg", "assets/loading6.jpg"]
+const cat_images = ["assets/pic1.jpg", "assets/pic2.jpg", "assets/pic3.jpg", "assets/pic4.jpg",
+                    "assets/pic5.jpg", "assets/pic6.jpg", "assets/loading.gif", 
+                    "assets/loading11.jpg"];
+
+function preloadImage() {
+    for (let i = 0; i < cat_images.length; i++) {
+        var img = new Image();
+        img.src = cat_images[i];
+    }
+}
+
+preloadImage();
 
 /** 
  * the function for add button's original state;
@@ -166,9 +174,9 @@ function generateID(inputText, identifierText) {
  * the result card
 */
 function getRandomCatPhoto() {
-    var randomNum = Math.floor(Math.random() * cat_photos.length);
+    var randomNum = Math.floor(Math.random() * 5);
     var catImage = document.getElementById("catSrc");
-    catImage.src = cat_photos[randomNum];
+    catImage.src = cat_images[randomNum];
 }
 
 /**
@@ -186,8 +194,8 @@ function setCatPhoto(inputText) {
  */
 async function resultCardLoading() {
     changeCardText("Making a decision...");
-    for(var i=0; i < loading_images.length; i++) {
-        setCatPhoto(loading_images[i]);
-        await new Promise(r=> setTimeout(r, 300));
-    }
+    setCatPhoto(cat_images[6]);
+    await new Promise(r=> setTimeout(r, 1050));
+    setCatPhoto(cat_images[7]);
+    await new Promise(r=> setTimeout(r, 150));
 }

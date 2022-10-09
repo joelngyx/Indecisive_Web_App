@@ -11,7 +11,7 @@ h1 {
 h2 {
     font-size: 30px;
     border-style: dashed;
-    font-weight: 900;
+    font-weight: 800;
     font-family: 'Arial Narrow Bold';
     text-align: center;
     padding: 20px 20px 20px;
@@ -37,6 +37,11 @@ p {
 }
 
 /****** Containers ******/
+body {
+    padding-left: 10px;
+    overflow-x: hidden;
+}
+
 .buttonDiv {
     display: flex;
     justify-content: center;
@@ -54,12 +59,11 @@ p {
 .activitiyListCard {
     height: 600px;
     overflow-y: scroll;
-    padding-right: 10px;
 }
 
 .resultCardTextContainer {
     height: 80px;
-    width: 350px;
+    width: 340px;
     overflow: hidden;
 }
 
@@ -118,12 +122,11 @@ button:hover {
 }
 
 /****** Other Elements ******/
-input {
+#activityName {
     height: 50px;
     width: 160px;
-    margin-right: 10px;
-    margin-bottom: 10px;
     margin-top: 10px;
+    margin-right: 10px;
     box-sizing: border-box;
 }
 
@@ -136,13 +139,12 @@ input {
     height: 400px;
     border-radius: 10px;
     overflow:hidden;
-    margin-left: 30px;
 }
 
 .activityCard {
     margin-top: 5px;
     border-radius: 10px;
-    width: 415px;
+    width: 300px;
     max-height: 300px;
     border-style: dotted;
     overflow: hidden;
