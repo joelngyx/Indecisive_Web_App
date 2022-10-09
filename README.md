@@ -1,4 +1,4 @@
-# indecisive_web_app
+# Indecisive_Web_App
 A simple, randomized decision-making web app. 
 
 To test:
