@@ -1,7 +1,7 @@
 /****** Text ******/
 h1 {
     color: black;
-    font-size: 55px;
+    font-size: 3rem;
     font-weight: 900;
     font-family: 'Arial Narrow Bold';
     text-align: center;
@@ -9,7 +9,7 @@ h1 {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 3rem;
     border-style: dashed;
     font-weight: 800;
     font-family: 'Arial Narrow Bold';
@@ -19,7 +19,7 @@ h2 {
 
 p {
     color: black;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-align: center;
     font-family: "Arial";
     text-overflow: ellipsis;
