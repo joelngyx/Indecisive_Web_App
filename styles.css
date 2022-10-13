@@ -19,7 +19,7 @@ h2 {
 
 p {
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
     font-family: "Arial";
     text-overflow: ellipsis;
@@ -37,8 +37,11 @@ p {
 }
 
 /****** Containers ******/
+html, body {
+    overflow-x: hidden;
+}
+
 body {
-    padding-left: 10px;
     overflow-x: hidden;
 }
 
