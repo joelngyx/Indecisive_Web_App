@@ -1,11 +1,6 @@
 # Indecisive_Web_App
-A simple, randomized decision-making web app. 
+A simple, randomized decision-making web app built with vanilla HTML, CSS, Javascript, and Bootstrap. Originally made as part of a coding interview for a web development internship role at Tusitala Books.
 
-To test:
-- Download the code in a .zip folder
-- Extract the .zip folder
-- Open the extracted folder
-- Run index.html
-- alternatively, go to https://indecisivewebapp.netlify.app/
+Link: https://indecisivewebapp.netlify.app/
 
 All image assets were sourced from www.freepik.com
